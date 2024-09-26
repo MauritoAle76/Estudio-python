@@ -18,10 +18,17 @@ numero_2 = int(input("Ingrese el segundo numero "))
 
 # operaciones matematicas
 
-suma = numero_1 + numero_2
-resta = numero_1 - numero_2
-multipicacion = numero_1 * numero_1 * numero_2
-modulo = numero_1 % numero_2  # modula me da el resto de la division
+if numero_2 == 0:
+    suma = numero_1 + numero_2
+    resta = numero_1 - numero_2
+    multipicacion = numero_1 * numero_1 * numero_2
+    modulo = "no se pudo calcular por que no se puede dividir por 0"
+else:
+    modulo = numero_1 % numero_2  # modula me da el resto de la division
+    suma = numero_1 + numero_2
+    resta = numero_1 - numero_2
+    multipicacion = numero_1 * numero_1 * numero_2
+
 
 # print de las operaciones realizadas
 # print()
@@ -34,7 +41,7 @@ print(f"La resta de los numeros ingresados es {resta} ")
 print()
 print(f"La multiplicacion de los numeros ingresados es {multipicacion} ")
 print()
-print(f"El modulo resultante de la division de los numeros ingresados es {modulo} ")
+print(f"El modulo resultante de la division de los numeros ingresados es: {modulo} ")
 print()
 
 
@@ -74,6 +81,14 @@ print(
 )
 print()
 
+
+if porcentaje_de_la_propina < 10:  # porcenta_propina < 10 es la condicion
+    print("El porcentaje de propina es menor a 10%")
+elif porcentaje_de_la_propina < 50:
+    print("El porcentaje de propina es menor a 50%")
+else:
+    print("El porcentaje de la propina el mayor a 50%")
+
 # calculos de total de propina y el monto total a pagar
 
 calculo_de_propina = monto_total_de_la_cuenta * porcentaje_de_la_propina / 100
@@ -81,7 +96,7 @@ calculo_de_propina = monto_total_de_la_cuenta * porcentaje_de_la_propina / 100
 monto_total_mas_propinas = monto_total_de_la_cuenta + calculo_de_propina
 
 # print
-
+print()
 print(
     f"El monto total informado es pesos: {monto_total_de_la_cuenta} mas la propina del : {porcentaje_de_la_propina} %, esto nos da un importe final a pagar de $ {monto_total_mas_propinas}.-"
 )
